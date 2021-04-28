@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("jquery", "1.7.1");</script>
+    <script>
+        $(document).ready(function () {
+            $("#netflix").click(function () {
+                $("#gallery").fadeIn(5500);
+            });
+        });
+        function move(obj, time) {
+            $(obj).stop().animate({
+                left: -250,
+                top: 0
+            }, time);
+        }
+        function back(css) {
+            $(css).stop().animate({
+                left: 0,
+                top: 0
+            });
+        }
+    </script>
+    <style>
+        html {
+            height: 100%
+        }
+        .moving {
+            border: 1px solid #000000;
+            margin: 20px auto 0 auto;
+            text-align: center;
+            width: 570px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+        }
+
+        .moving img {
+            cursor: pointer;
+            position: relative;
+        }
+        #gallery
+        {
+            position: absolute;
+            top: 210px;
+            left: 60%;
+            margin: -150px 0 0 -150px;
+        }
+    </style>
+</head>
+
+<body bgcolor="black">
+    <div class="moving">
+        <img id="netflix" onclick="move(this, 2000)" src="netflix.jpg" width="300px" /><br>
+        <img id="gallery" onClick="location.href='gallery.html'" src="gallery2.png" width="100" height="50" style="display:none;"/>
+    </div>
+</body>
+
+</html>
